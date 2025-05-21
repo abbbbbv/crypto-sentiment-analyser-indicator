@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENTISCOPE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="noise"></div>
+    
+    <!-- Initial Loading Screen -->
+    <div class="initial-loader" id="initialLoader">
+        <div class="loader-content">
+            <h2>SENTISCOPE</h2>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Popup -->
+    <div class="error-popup" id="errorPopup">
+        <div class="error-content">
+            <h3>ERROR</h3>
+            <p id="errorMessage">Something went wrong</p>
+            <button onclick="closeError()">CLOSE</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="glitch-container">
+                <h1 class="glitch" data-text="SENTISCOPE">SENTISCOPE</h1>
+            </div>
+            <div class="marquee">
+                <div class="marquee-content">
+                    ANALYZING TWITTER & REDDIT IN REAL-TIME * ANALYZING TWITTER & REDDIT IN REAL-TIME * 
+                </div>
+            </div>
+        </header>
+
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="keyword-input" placeholder="TYPE ANYTHING...">
+                <button id="analyze-btn">
+                    <span class="btn-text">ANALYZE</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Analysis Loading Bar -->
+        <div class="analysis-loader" id="analysisLoader">
+            <div class="loader-text">ANALYZING...</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+
+        <div class="results-section" id="results">
+            <div class="sentiment-card">
+                <div class="card-header">
+                    <span class="timestamp">LIVE_SENTIMENT::</span>
+                    <div class="blink"></div>
+                </div>
+                <div class="score-display" id="current-score">
+                    <span class="score-value">0.00</span>
+                    <span class="score-label">NEUTRAL</span>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-container">
+                    <canvas id="sentimentChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
